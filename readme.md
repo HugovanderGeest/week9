@@ -16,7 +16,7 @@ Er zijn nog meer opties die kun je vinden op de website. Lees ook de copyright d
 
 In je code staat op verschillende plaatsen TODO, dit betekent dat je daar iets moet afmaken of oplossen
 
-### DONE: 1. In deze code staan een aantal fouten die je eerst moet oplossen en naar
+##### DONE: 1. In deze code staan een aantal fouten die je eerst moet oplossen en naar
 de standaard om te zetten.
 2. Begin met de aanpassingen, alleen fouten en volgens de standaard, in api.js
 3. Daarna doe je de aanpassingen in request.js
