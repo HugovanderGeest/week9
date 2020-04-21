@@ -1,34 +1,24 @@
-// TODO:    Haal alle fouten uit de scripts.
-//          Fouten zijn niet alleen beperkt tot var, let o const!
-//          maar ook bijvoorbeeld de afsluiting van een statement
-//          een komma die verkeerd staat, of variabelen die niet
-//          bekend zijn.
-
 let results = [];
-let item = [];
-let coordinates = [];
-let address = [];
-
-id = [0];
-email = [0];
-street = [0];
-address = [0];
+let items,
+  coordinates,
+  address,
+  id,
+  email,
+  street = {};
 
 function users(items) {
   for (let count = 0; count < items.length; count++) {
     item = new Name(items[count].name);
     coordinates = new Coordinates(items[count].location.coordinates);
     address = new Address(items[count].location);
+    email = new Email(items[count].email);
+    street = new Street(items[count].location);
+    id = new Id(items[count].id);
   }
   console.table(item);
   console.table(coordinates);
-  console.table(address.showStreet());
-
-  // TODO:    Zorg ervoor dat de volgende statements resultaat gaan opleveren
-  //          Hiervoor moet je de functie showAddress() afmaken en de constructors voor de
-  //          objecten id, email, street en adrress aanmaken.
-
-  console.log(address.showAddress());
+  console.table(address.street);
+  address.showAddress();
   console.table(id);
   console.table(email);
   console.table(street);
@@ -55,9 +45,5 @@ function randomUser(json) {
   users(results);
 }
 
-let url = "https://randomuser.me/api/?results=1";
+var url = "https://randomuser.me/api/?results=1";
 createGetRequest(url, randomUser);
-// TODO:    check de xhr tab en waarschuwingen tab
-//          De xhr tab heeft subtabs, check deze allemaal
-//          In deze subtabs staat veel informatie voor je
-//          als je call bijvoorbeeld geen antwoord heeft
